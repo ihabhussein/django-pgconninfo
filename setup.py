@@ -8,6 +8,13 @@ setup(
     author='Ihab Hussein',
     author_email='ihab@ihabhussein.com',
     license='BSD',
+    classifiers=[
+        'Development Status :: 4 - Beta',
+        'License :: OSI Approved :: BSD License',
+        'Programming Language :: Python :: 2.7',
+        'Topic :: Database',
+    ],
+    keywords='PostgreSQL connection',
     packages=['django-pgconninfo'],
     install_requires=[
         "pgpasslib >= 1.1.0",
