@@ -15,7 +15,7 @@ setup(
         'Topic :: Database',
     ],
     keywords='PostgreSQL connection',
-    packages=['django-pgconninfo'],
+    packages=['pgconninfo'],
     install_requires=[
         "pgpasslib >= 1.1.0",
     ],
