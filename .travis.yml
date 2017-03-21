@@ -4,4 +4,4 @@ python:
 install:
     - pip install .
 script:
-    - nosetests pgconninfo/test/database_url.py
+    - nosetests pgconninfo/tests/database_url.py
