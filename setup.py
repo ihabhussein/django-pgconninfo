@@ -3,7 +3,7 @@ from setuptools import setup
 setup(
     name='django-pgconninfo',
     version='0.9',
-    description='PostgreSQL connection info from invironment variables',
+    description='PostgreSQL connection info from environment variables',
     url='http://github.com/ihabhussein/django-pgconninfo',
     author='Ihab Hussein',
     author_email='ihab@ihabhussein.com',
@@ -19,5 +19,6 @@ setup(
     install_requires=[
         "pgpasslib >= 1.1.0",
     ],
+    test_suite='pgconninfo.tests',
     zip_safe=True
 )
