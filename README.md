@@ -55,7 +55,7 @@ environment variables:
 
   This is a standard PostgreSQL environment variable and is used by Heroku. The
   format of this variable is described in [PostgreSQL's
-  documentation](https://www.postgresql.org/docs/current/static/libpq-connect.html#AEN45347)
+  documentation](https://www.postgresql.org/docs/current/static/libpq-connect.html#AEN45527)
 
 - `RDS_HOSTNAME`, `RDS_PORT`, `RDS_DB_NAME`, `RDS_USERNAME`, and `RDS_PASSWORD`
 
