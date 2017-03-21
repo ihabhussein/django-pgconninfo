@@ -94,7 +94,10 @@ def pg_conninfo(engine='django.db.backends.postgresql'):
     if not password:
         # Get the password from the password file
         # https://www.postgresql.org/docs/current/static/libpq-pgpass.html
-        password = pgpasslib.getpass(host, port, database, user)
+        try:
+            password = pgpasslib.getpass(host, port, database, user)
+        except:
+            password = None
 
     return {
         'ENGINE': engine,
