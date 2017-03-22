@@ -24,7 +24,7 @@ try:
     # 2.7
     from urlparse import urlparse
     from ConfigParser import ConfigParser
-except ImportException:
+except ImportError:
     # 3.x
     from urllib.parse import urlparse
     from configparser import ConfigParser
