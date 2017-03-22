@@ -20,8 +20,13 @@ or, to use an alternative engine, explicitly state the engine class:
 
 from os import environ, path
 from subprocess import check_output
-from ConfigParser import ConfigParser
 from urlparse import urlparse
+try:
+    # 2.7
+    from ConfigParser import ConfigParser
+except ImportException:
+    # 3.x
+    from configparser import ConfigParser
 
 import pgpasslib
 
