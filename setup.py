@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='django-pgconninfo',
-    version='0.9.1',
+    version='0.9.2',
     description='PostgreSQL connection info from environment variables',
     url='http://github.com/ihabhussein/django-pgconninfo',
     author='Ihab Hussein',
