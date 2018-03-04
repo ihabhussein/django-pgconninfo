@@ -22,11 +22,11 @@ from os import environ, path
 from subprocess import check_output
 try:
     # 2.7
-    from urlparse import urlparse
+    from urlparse import urlparse, parse_qs
     from ConfigParser import ConfigParser
 except ImportError:
     # 3.x
-    from urllib.parse import urlparse
+    from urllib.parse import urlparse, parse_qs
     from configparser import ConfigParser
 
 import pgpasslib
@@ -37,6 +37,7 @@ def pg_conninfo(engine='django.db.backends.postgresql'):
     port = 5432
     database = user = environ.get('USER')
     password = ''
+    options = {}
 
     if 'DATABASE_URL' in environ:
         # Heroku, etc.
@@ -48,6 +49,7 @@ def pg_conninfo(engine='django.db.backends.postgresql'):
         database = url.path[1:] or database
         user = url.username or user
         password = url.password or password
+        options = dict(options, **parse_qs(url.query))
 
     elif 'RDS_DB_NAME' in environ:
         # AWS Elastic Beanstalk
@@ -112,4 +114,5 @@ def pg_conninfo(engine='django.db.backends.postgresql'):
         'HOST': host,
         'PORT': port,
         'NAME': database,
+        'OPTIONS': options,
     }
